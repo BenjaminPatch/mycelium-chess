@@ -16,7 +16,7 @@ const app = express();
 var env = process.env.NODE_ENV || "development";
 
 const mongoUrl = 'mongodb://localhost:27017';
-const dbName = 'devo3801';
+const dbName = 'myceliumChess';
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
