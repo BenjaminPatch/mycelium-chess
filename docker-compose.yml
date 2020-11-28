@@ -1,0 +1,37 @@
+version: "3"
+volumes:
+  mongodb_data_container:
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    depends_on:
+      - mongodb_container
+    volumes:
+      - ./server:/root/app/src/server 
+      - ./client/src:/root/app/src/client/src
+    ports:
+      - "3000:3000"
+      - "8081:8081"
+  mongodb_container:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+  mongodb_seed:
+    build:
+      context: ./seed
+    depends_on:
+      - mongodb_container
+    links:
+      - mongodb_container
+    environment:
+      - DROP_DATABASE=true
+      - REPLACE_ID=true
+      - DB_HOST=mongodb_container
+      - DB_NAME=mcvChess
+      - DB_PORT=27017
+

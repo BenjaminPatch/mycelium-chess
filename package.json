@@ -1,38 +1,40 @@
 {
-  "name": "mycelium-chess",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
-  },
+  "name": "devo3801",
+  "version": "0.0.1",
+  "description": "WIP",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "watch-client": "(cd client && npm run start)",
+    "watch-server": "nodemon server/index.ts",
+    "dev": "npx concurrently \"npm run watch-client\" \"npm run watch-server\"",
+    "build-server": "npx tsc"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kethomassen/DEVO3801.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/kethomassen/DEVO3801#readme",
+  "dependencies": {
+    "@types/styled-components": "^5.1.2",
+    "aws-sdk": "^2.744.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "docker-compose": "^0.23.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.2",
+    "multer": "^1.4.2",
+    "styled-system": "^5.1.5",
+    "up": "^1.0.2",
+    "uqsso": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "http-proxy-middleware": "^1.0.5",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   }
 }
